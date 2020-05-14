@@ -53,6 +53,11 @@ const SignUpForm = props => {
     props.setShowSignUpForm(false);
   }
 
+  function showDashBoard(e) {
+    e.preventDefault();
+    props.setIsLoggedIn(true);
+  }
+
   const classes = useStyles();
 
   return (
@@ -126,6 +131,7 @@ const SignUpForm = props => {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={showDashBoard}
           >
             Sign Up
           </Button>
