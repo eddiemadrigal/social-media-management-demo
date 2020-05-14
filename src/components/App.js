@@ -11,7 +11,7 @@ const App = () => {
   if (isLoggedIn) {
     return (
       <div>
-        <Dashboard />
+        <Dashboard isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       </div>
     );
   } else if (showSignUpForm) {
