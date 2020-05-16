@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,7 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import SignUpForm from './SignUpForm';
+
 
 function Copyright() {
   return (
@@ -61,10 +62,12 @@ const useStyles = makeStyles((theme) => ({
 const LoginForm = props => {
 
   const classes = useStyles();
+  let history = useHistory();
 
   function checkLogin(e) {
     e.preventDefault();
     props.setIsLoggedIn(true);
+    history.push("/dashboard");
   }
   
   function showSignUpForm(e) {
@@ -129,7 +132,7 @@ const LoginForm = props => {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2" onClick={showSignUpForm} >
+                <Link href="/signup" variant="body2" >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

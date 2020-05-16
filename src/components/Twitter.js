@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Twitter = () => {
+const Twitter = props => {
   return (
     <div>
       <h2>Twitter Component</h2>

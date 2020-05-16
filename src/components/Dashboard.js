@@ -126,6 +126,11 @@ const Dashboard = props => {
     setOpen(false);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  let platform;
+
+  if (props.showTwitterApp) {
+    platform = <Twitter />
+  }
 
   return (
     <div className={classes.root}>
@@ -178,7 +183,7 @@ const Dashboard = props => {
             {/* Social Media App */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Twitter />
+                { platform }
               </Paper>
             </Grid>
           </Grid>
